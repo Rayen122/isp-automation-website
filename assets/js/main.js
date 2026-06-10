@@ -13,8 +13,8 @@ window.addEventListener('load',()=>{
     (function loop(){
         dx+=(mx-dx)*.2; dy+=(my-dy)*.2;
         rx+=(mx-rx)*.08; ry+=(my-ry)*.08;
-        dot.style.left=dx+'px'; dot.style.top=dy+'px';
-        ring.style.left=rx+'px'; ring.style.top=ry+'px';
+        dot.style.transform=`translate3d(${dx}px, ${dy}px, 0) translate(-50%, -50%)`;
+        ring.style.transform=`translate3d(${rx}px, ${ry}px, 0) translate(-50%, -50%)`;
         requestAnimationFrame(loop);
     })();
     document.querySelectorAll('a,button,.p-card,.bento-card,.about-feat,.c-info-item,.prod-filter').forEach(el=>{
@@ -34,6 +34,13 @@ window.addEventListener('scroll',()=>{
 (function(){
     const c=document.getElementById('heroCanvas');
     if(!c) return;
+
+    // Désactiver le rendu WebGL sur mobile pour économiser les performances
+    if(window.innerWidth < 1024) {
+        c.style.display = 'none';
+        return;
+    }
+
     const r=new THREE.WebGLRenderer({canvas:c,alpha:true,antialias:true});
     r.setSize(window.innerWidth,window.innerHeight);
     r.setPixelRatio(Math.min(window.devicePixelRatio,2));
@@ -77,8 +84,20 @@ window.addEventListener('scroll',()=>{
         my=(e.clientY/window.innerHeight-.5)*2;
     });
 
+    // Observer pour mettre en pause le rendu WebGL quand la section Hero n'est pas visible
+    let isHeroVisible = true;
+    if ('IntersectionObserver' in window) {
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                isHeroVisible = entry.isIntersecting;
+            });
+        }, { threshold: 0 });
+        observer.observe(document.getElementById('hero'));
+    }
+
     (function anim(){
         requestAnimationFrame(anim);
+        if(!isHeroVisible) return; // Évite les calculs et rendus WebGL inutiles
         pts.rotation.y+=.00015; pts.rotation.x+=.00008;
         meshes.forEach(m=>{m.rotation.x+=m.userData.rx;m.rotation.y+=m.userData.ry;});
         cam.position.x+=(mx*3-cam.position.x)*.01;

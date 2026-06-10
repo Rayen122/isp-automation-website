@@ -687,7 +687,7 @@
         /* ===== RESPONSIVE ===== */
         @media(max-width:1024px) {
             .hero-inner { padding:160px 30px 80px; }
-            .hero-visual { display:none; }
+            .hero-visual, .hero-canvas { display:none; }
             .hero-metrics { gap:24px; flex-wrap:wrap; }
             .about-grid, .contact-grid { grid-template-columns:1fr; }
             .stats-grid { grid-template-columns:repeat(2,1fr); }
