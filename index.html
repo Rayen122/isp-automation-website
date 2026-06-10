@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ISP Automation | Solutions d'Automatisation Industrielle - Tunisie</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&family=Syne:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/main.css">
+</head>
+<body>
+
+<!-- GRAIN OVERLAY -->
+<div class="grain"></div>
+
+<!-- CUSTOM CURSOR -->
+<div class="cursor-dot"></div>
+<div class="cursor-ring"></div>
+
+<!-- SCROLL PROGRESS -->
+<div class="scroll-progress" id="scrollProgress"></div>
+
+<!-- PRELOADER -->
+<div id="preloader">
+    <div class="pre-logo-wrap">
+        <div class="pre-logo-ring"></div>
+        <div class="pre-logo-ring"></div>
+        <div class="pre-logo-wrap-inner">
+            <img src="assets/images/logo-new.png" alt="ISP Automation" class="pre-logo-img">
+        </div>
+    </div>
+    <div class="pre-text">Chargement...</div>
+</div>
+
+<!-- NAVBAR -->
+<nav class="nav" id="topNav">
+    <a href="#" class="nav-brand">
+        <div class="nav-logo-wrap">
+            <img src="assets/images/logo-new.png" alt="ISP" class="nav-brand-logo">
+        </div>
+        <div class="nav-brand-text">ISP<span>.</span></div>
+    </a>
+    <ul class="nav-menu" id="navMenu">
+        <li><a href="#about" onclick="closeM()">A Propos</a></li>
+        <li><a href="#divisions" onclick="closeM()">Divisions</a></li>
+        <li><a href="#products" onclick="closeM()">Produits</a></li>
+        <li><a href="#partners" onclick="closeM()">Partenaires</a></li>
+        <li><a href="#contact" onclick="closeM()">Contact</a></li>
+    </ul>
+    <a href="#contact" class="nav-cta">Demander un Devis</a>
+    <div class="hamburger" id="burger" onclick="toggleM()">
+        <span></span><span></span><span></span>
+    </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="hero">
+    <video class="hero-video" autoplay muted loop playsinline poster="assets/images/logo-new.png">
+        <source src="assets/videos/hero-bg.mp4" type="video/mp4">
+    </video>
+    <canvas class="hero-canvas" id="heroCanvas"></canvas>
+    <div class="hero-grid"></div>
+    <div class="hero-gradient"></div>
+    <div class="hero-visual">
+        <div class="hero-orb hero-orb-1"></div>
+        <div class="hero-orb hero-orb-2"></div>
+    </div>
+    <div class="hero-inner">
+        <div class="hero-content">
+            <div class="hero-badge">
+                <div class="hero-badge-dot"></div>
+                <span>Automatisation & Industrie depuis 2014</span>
+            </div>
+            <h1>Votre partenaire en<br><span class="accent">automatisation industrielle</span></h1>
+            <p class="hero-desc">
+                ISP Automation fournit les meilleures solutions en pneumatique, hydraulique, instrumentation et automatisme aux industries de la Tunisie.
+            </p>
+            <div class="hero-actions">
+                <a href="#products" class="btn-primary">Decouvrir nos produits <i class="fas fa-arrow-right"></i></a>
+                <a href="#about" class="btn-outline">En savoir plus</a>
+            </div>
+            <div class="hero-metrics">
+                <div class="hero-metric">
+                    <div class="hero-metric-val">10<span>+</span></div>
+                    <div class="hero-metric-label">Ans d'experience</div>
+                </div>
+                <div class="hero-metric">
+                    <div class="hero-metric-val">10<span>+</span></div>
+                    <div class="hero-metric-label">Partenaires mondiaux</div>
+                </div>
+                <div class="hero-metric">
+                    <div class="hero-metric-val">500<span>+</span></div>
+                    <div class="hero-metric-label">Clients satisfaits</div>
+                </div>
+                <div class="hero-metric">
+                    <div class="hero-metric-val">3000<span>+</span></div>
+                    <div class="hero-metric-label">References produits</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="hero-scroll">
+        <span class="hero-scroll-text">Scroll</span>
+        <div class="hero-scroll-line"></div>
+    </div>
+</section>
+
+<!-- MARQUEE BAR -->
+<div class="marquee-bar">
+    <div class="marquee-track">
+        <span class="marquee-item">Pneumatique</span>
+        <span class="marquee-item">Hydraulique</span>
+        <span class="marquee-item">Automatisme</span>
+        <span class="marquee-item">Capteurs</span>
+        <span class="marquee-item">Instrumentation</span>
+        <span class="marquee-item">Vision Industrielle</span>
+        <span class="marquee-item">Securite</span>
+        <span class="marquee-item">Variateurs</span>
+        <span class="marquee-item">Pneumatique</span>
+        <span class="marquee-item">Hydraulique</span>
+        <span class="marquee-item">Automatisme</span>
+        <span class="marquee-item">Capteurs</span>
+        <span class="marquee-item">Instrumentation</span>
+        <span class="marquee-item">Vision Industrielle</span>
+        <span class="marquee-item">Securite</span>
+        <span class="marquee-item">Variateurs</span>
+    </div>
+</div>
+
+<!-- A PROPOS -->
+<section class="section section-white" id="about">
+    <div class="container">
+        <div class="about-grid">
+            <div class="about-visual rv-left">
+                <div class="about-accent"></div>
+                <div class="about-img-wrap">
+                    <img src="assets/images/photo.jpg" alt="Partenaires ISP Automation">
+                    <div class="about-img-overlay"></div>
+                </div>
+            
+                <div class="about-exp-badge">
+                    <div class="ab-num">+10</div>
+                    <div class="ab-text">Ans d'expertise</div>
+                </div>
+            </div>
+            <div class="about-content rv-right">
+                <div class="s-tag">A Propos</div>
+                <h3>L'expertise <span class="accent">industrielle</span> au service de votre performance</h3>
+                <p>Fondee a Tunis en 2014 par M. Raouf Elarbi, ISP Automation s'est imposee comme l'un des principaux distributeurs de solutions innovantes en automatisation industrielle sur le marche nord-africain.</p>
+                <p>Specialisee dans la fourniture de composants pour l'automatisme, le materiel hydraulique et la regulation industrielle, nous offrons un accompagnement complet de la selection a la mise en service.</p>
+                <div class="about-features">
+                    <div class="about-feat"><i class="fas fa-check-circle"></i><span>Pneumatique industrielle</span></div>
+                    <div class="about-feat"><i class="fas fa-check-circle"></i><span>Automatisme & controle</span></div>
+                    <div class="about-feat"><i class="fas fa-check-circle"></i><span>Hydraulique</span></div>
+                    <div class="about-feat"><i class="fas fa-check-circle"></i><span>Instrumentation</span></div>
+                    <div class="about-feat"><i class="fas fa-check-circle"></i><span>Securite machines</span></div>
+                    <div class="about-feat"><i class="fas fa-check-circle"></i><span>Vision industrielle</span></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- DIVISIONS -->
+<section class="section section-dark" id="divisions">
+    <div class="container">
+        <div class="s-header centered rv">
+            <div class="s-tag">Nos Expertises</div>
+            <h2>Nos <span class="accent">divisions</span></h2>
+            <p>Trois poles d'expertise pour repondre a tous vos besoins industriels</p>
+        </div>
+        <div class="bento-grid">
+            <div class="bento-card rv">
+                <div class="bento-icon"><i class="fas fa-wind"></i></div>
+                <h3>Pneumatique & Hydraulique</h3>
+                <p>Verins, vannes, distributeurs, preparation d'air, pompes et moteurs hydrauliques pour vos installations industrielles les plus exigeantes.</p>
+                <div class="bento-card-line"></div>
+            </div>
+            <div class="bento-card rv">
+                <div class="bento-icon"><i class="fas fa-robot"></i></div>
+                <h3>Automatisation Industrielle</h3>
+                <p>Automates PLC, variateurs, servomoteurs, capteurs et systemes de controle pour vos lignes de production automatisees.</p>
+                <div class="bento-card-line"></div>
+            </div>
+            <div class="bento-card rv">
+                <div class="bento-icon"><i class="fas fa-gauge-high"></i></div>
+                <h3>Equipements & Instrumentation</h3>
+                <p>Debitmettres, transmetteurs, alimentations, modules E/S et solutions de securite pour vos processus industriels.</p>
+                <div class="bento-card-line"></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- PRODUITS -->
+<section class="section section-light" id="products">
+    <div class="container">
+        <div class="s-header centered rv">
+            <h2>Nos <span class="accent">produits</span></h2>
+            <p>Decouvrez notre gamme complete de solutions industrielles des plus grandes marques mondiales</p>
+        </div>
+        <div class="prod-filters rv">
+            <button class="prod-filter active" data-cat="all">Tous</button>
+            <button class="prod-filter" data-cat="capteurs">Capteurs & Vision</button>
+            <button class="prod-filter" data-cat="automates">Automates & Variateurs</button>
+            <button class="prod-filter" data-cat="securite">Securite</button>
+            <button class="prod-filter" data-cat="pneumatique">Pneumatique & Hydraulique</button>
+            <button class="prod-filter" data-cat="instrumentation">Instrumentation</button>
+        </div>
+        <div class="prod-grid" id="prodGrid">
+
+            <!-- CAPTEURS -->
+            <div class="p-card rv" data-cat="capteurs">
+                <div class="p-card-img"><img src="assets/images/brochure/img_07.jpeg" alt="Capteurs Pepperl+Fuchs"></div>
+                <div class="p-card-body"><span class="p-card-cat">Capteurs</span><h3>Capteurs Inductifs & Ultrasoniques</h3><p>Detecteurs de proximite inductifs, capacitifs et a ultrasons pour la detection sans contact.</p><a href="#contact" class="p-card-link">Demander un devis <i class="fas fa-arrow-right"></i></a></div>
+            </div>
+            <div class="p-card rv" data-cat="capteurs">
+                <div class="p-card-img"><img src="assets/images/brochure/img_09.jpeg" alt="Capteurs SICK"></div>
+                <div class="p-card-body"><span class="p-card-cat">Capteurs</span><h3>Capteurs SICK</h3><p>Capteurs photoelectriques, proximite et encodeurs pour automatisation et logistique.</p><a href="#contact" class="p-card-link">Demander un devis <i class="fas fa-arrow-right"></i></a></div>
+            </div>
+            <div class="p-card rv" data-cat="capteurs">
+                <div class="p-card-img"><img src="assets/images/brochure/img_10.jpeg" alt="Cellules Leuze"></div>
+                <div class="p-card-body"><span class="p-card-cat">Capteurs</span><h3>Cellules Photoelectriques Leuze</h3><p>Detecteurs optiques de haute precision pour controle de presence et positionnement.</p><a href="#contact" class="p-card-link">Demander un devis <i class="fas fa-arrow-right"></i></a></div>
+            </div>
+            <div class="p-card rv" data-cat="capteurs">
+                <div class="p-card-img"><img src="assets/images/brochure/img_06.jpeg" alt="Capteurs KEYENCE"></div>
+                <div class="p-card-body"><span class="p-card-cat">Capteurs</span><h3>Capteurs Laser KEYENCE</h3><p>Capteurs de pression et de mesure laser haute precision pour applications exigeantes.</p><a href="#contact" class="p-card-link">Demander un devis <i class="fas fa-arrow-right"></i></a></div>
+            </div>
+            <div class="p-card rv" data-cat="capteurs">
+                <div class="p-card-img"><img src="assets/images/brochure/img_08.jpeg" alt="Vision KEYENCE"></div>
+                <div class="p-card-body"><span class="p-card-cat">Vision Industrielle</span><h3>Cameras de Vision KEYENCE</h3><p>Systemes de vision industrielle pour inspection, mesure et controle qualite automatise.</p><a href="#contact" class="p-card-link">Demander un devis <i class="fas fa-arrow-right"></i></a></div>
+            </div>
+            <div class="p-card rv" data-cat="capteurs">
+                <div class="p-card-img"><img src="assets/images/brochure/img_11.jpeg" alt="Mesure KEYENCE"></div>
+                <div class="p-card-body"><span class="p-card-cat">Capteurs</span><h3>Capteurs de Mesure KEYENCE</h3><p>Instruments de mesure de deplacement et d'epaisseur haute resolution.</p><a href="#contact" class="p-card-link">Demander un devis <i class="fas fa-arrow-right"></i></a></div>
+            </div>
+
+            <!-- AUTOMATES & VARIATEURS -->
+            <div class="p-card rv" data-cat="automates">
+                <div class="p-card-img"><img src="assets/images/brochure/img_21.jpeg" alt="Siemens S7"></div>
+                <div class="p-card-body"><span class="p-card-cat">Automates</span><h3>Siemens S7 & Servomoteurs</h3><p>Automates SIMATIC S7, servovariateurs et servomoteurs pour automatisation avancee.</p><a href="#contact" class="p-card-link">Demander un devis <i class="fas fa-arrow-right"></i></a></div>
+            </div>
+            <div class="p-card rv" data-cat="automates">
+                <div class="p-card-img"><img src="assets/images/brochure/img_22.jpeg" alt="Siemens S7-200"></div>
+                <div class="p-card-body"><span class="p-card-cat">Automates</span><h3>Siemens SIMATIC S7-200</h3><p>Automate programmable compact pour applications de petite et moyenne envergure.</p><a href="#contact" class="p-card-link">Demander un devis <i class="fas fa-arrow-right"></i></a></div>
+            </div>
+            <div class="p-card rv" data-cat="automates">
+                <div class="p-card-img"><img src="assets/images/brochure/img_23.jpeg" alt="Siemens LOGO"></div>
+                <div class="p-card-body"><span class="p-card-cat">Automates</span><h3>Siemens LOGO!</h3><p>Module logique intelligent pour automatisation de batiments et petites machines.</p><a href="#contact" class="p-card-link">Demander un devis <i class="fas fa-arrow-right"></i></a></div>
+            </div>
+            <div class="p-card rv" data-cat="automates">
+                <div class="p-card-img"><img src="assets/images/brochure/img_20.jpeg" alt="PowerFlex"></div>
+                <div class="p-card-body"><span class="p-card-cat">Variateurs</span><h3>Variateurs PowerFlex</h3><p>Gamme complete de variateurs de frequence pour controle moteur de toutes puissances.</p><a href="#contact" class="p-card-link">Demander un devis <i class="fas fa-arrow-right"></i></a></div>
+            </div>
+            <div class="p-card rv" data-cat="automates">
+                <div class="p-card-img"><img src="assets/images/brochure/img_19.jpeg" alt="OMRON Drives"></div>
+                <div class="p-card-body"><span class="p-card-cat">Variateurs</span><h3>Servovariateurs & Variateurs OMRON</h3><p>Servomoteurs et variateurs de vitesse pour controle de mouvement precis.</p><a href="#contact" class="p-card-link">Demander un devis <i class="fas fa-arrow-right"></i></a></div>
+            </div>
+
+            <!-- SECURITE -->
+            <div class="p-card rv" data-cat="securite">
+                <div class="p-card-img"><img src="assets/images/brochure/img_12.jpeg" alt="Schmersal"></div>
+                <div class="p-card-body"><span class="p-card-cat">Securite</span><h3>Equipements Schmersal</h3><p>Barrieres immaterielles, interrupteurs et relais de securite, arrets d'urgence.</p><a href="#contact" class="p-card-link">Demander un devis <i class="fas fa-arrow-right"></i></a></div>
+            </div>
+            <div class="p-card rv" data-cat="securite">
+                <div class="p-card-img"><img src="assets/images/brochure/img_13.jpeg" alt="Pilz"></div>
+                <div class="p-card-body"><span class="p-card-cat">Securite</span><h3>Solutions de Securite Pilz</h3><p>Relais de securite, barrieres immaterielles et modules configurables PNOZ.</p><a href="#contact" class="p-card-link">Demander un devis <i class="fas fa-arrow-right"></i></a></div>
+            </div>
+
+            <!-- PNEUMATIQUE & HYDRAULIQUE -->
+            <div class="p-card rv" data-cat="pneumatique">
+                <div class="p-card-img"><img src="assets/images/brochure/img_50.png" alt="Festo"></div>
+                <div class="p-card-body"><span class="p-card-cat">Pneumatique</span><h3>Composants FESTO</h3><p>Verins, vannes, ilots de distributeurs et systemes pneumatiques complets.</p><a href="#contact" class="p-card-link">Demander un devis <i class="fas fa-arrow-right"></i></a></div>
+            </div>
+            <div class="p-card rv" data-cat="pneumatique">
+                <div class="p-card-img"><img src="assets/images/brochure/img_49.jpeg" alt="Verins pneumatiques"></div>
+                <div class="p-card-body"><span class="p-card-cat">Pneumatique</span><h3>Verins Pneumatiques</h3><p>Verins double effet et simple effet pour toutes applications industrielles.</p><a href="#contact" class="p-card-link">Demander un devis <i class="fas fa-arrow-right"></i></a></div>
+            </div>
+            <div class="p-card rv" data-cat="pneumatique">
+                <div class="p-card-img"><img src="assets/images/brochure/img_48.jpeg" alt="FRL"></div>
+                <div class="p-card-body"><span class="p-card-cat">Pneumatique</span><h3>Unites de Traitement d'Air (FRL)</h3><p>Filtres, regulateurs et lubrificateurs pour la preparation de l'air comprime.</p><a href="#contact" class="p-card-link">Demander un devis <i class="fas fa-arrow-right"></i></a></div>
+            </div>
+            <div class="p-card rv" data-cat="pneumatique">
+                <div class="p-card-img"><img src="assets/images/brochure/img_51.jpeg" alt="Duravis"></div>
+                <div class="p-card-body"><span class="p-card-cat">Pneumatique</span><h3>Electrovannes DURAVIS</h3><p>Vannes solenoides robustes pour applications pneumatiques et hydrauliques.</p><a href="#contact" class="p-card-link">Demander un devis <i class="fas fa-arrow-right"></i></a></div>
+            </div>
+            <div class="p-card rv" data-cat="pneumatique">
+                <div class="p-card-img"><img src="assets/images/brochure/img_42.jpeg" alt="Distributeurs"></div>
+                <div class="p-card-body"><span class="p-card-cat">Pneumatique</span><h3>Distributeurs Pneumatiques</h3><p>Electrovannes et distributeurs 5/2 et 5/3 pour circuits pneumatiques.</p><a href="#contact" class="p-card-link">Demander un devis <i class="fas fa-arrow-right"></i></a></div>
+            </div>
+            <div class="p-card rv" data-cat="pneumatique">
+                <div class="p-card-img"><img src="assets/images/brochure/img_43.jpeg" alt="Rexroth"></div>
+                <div class="p-card-body"><span class="p-card-cat">Hydraulique</span><h3>Distributeurs Hydrauliques Rexroth</h3><p>Distributeurs directionnels et valves proportionnelles pour systemes hydrauliques.</p><a href="#contact" class="p-card-link">Demander un devis <i class="fas fa-arrow-right"></i></a></div>
+            </div>
+            <div class="p-card rv" data-cat="pneumatique">
+                <div class="p-card-img"><img src="assets/images/brochure/img_41.jpeg" alt="Verin hydraulique"></div>
+                <div class="p-card-body"><span class="p-card-cat">Hydraulique</span><h3>Verins Hydrauliques</h3><p>Verins hydrauliques double tige pour applications haute pression.</p><a href="#contact" class="p-card-link">Demander un devis <i class="fas fa-arrow-right"></i></a></div>
+            </div>
+
+            <!-- INSTRUMENTATION -->
+            <div class="p-card rv" data-cat="instrumentation">
+                <div class="p-card-img"><img src="assets/images/brochure/img_24.jpeg" alt="KROHNE"></div>
+                <div class="p-card-body"><span class="p-card-cat">Instrumentation</span><h3>Debitmetre Electromagnetique KROHNE</h3><p>Mesure de debit precise pour liquides conducteurs dans les processus industriels.</p><a href="#contact" class="p-card-link">Demander un devis <i class="fas fa-arrow-right"></i></a></div>
+            </div>
+            <div class="p-card rv" data-cat="instrumentation">
+                <div class="p-card-img"><img src="assets/images/brochure/img_26.jpeg" alt="Endress+Hauser"></div>
+                <div class="p-card-body"><span class="p-card-cat">Instrumentation</span><h3>Transmetteurs de Pression E+H</h3><p>Capteurs et transmetteurs de pression pour applications process et hygieniques.</p><a href="#contact" class="p-card-link">Demander un devis <i class="fas fa-arrow-right"></i></a></div>
+            </div>
+            <div class="p-card rv" data-cat="instrumentation">
+                <div class="p-card-img"><img src="assets/images/brochure/img_25.jpeg" alt="Georgin"></div>
+                <div class="p-card-body"><span class="p-card-cat">Instrumentation</span><h3>Thermostats GEORGIN</h3><p>Thermostats industriels et instruments de regulation de temperature.</p><a href="#contact" class="p-card-link">Demander un devis <i class="fas fa-arrow-right"></i></a></div>
+            </div>
+            <div class="p-card rv" data-cat="instrumentation">
+                <div class="p-card-img"><img src="assets/images/brochure/img_34.jpeg" alt="Phoenix Contact PSU"></div>
+                <div class="p-card-body"><span class="p-card-cat">Instrumentation</span><h3>Alimentations Phoenix Contact</h3><p>Blocs d'alimentation QUINT, TRIO et STEP pour armoires electriques.</p><a href="#contact" class="p-card-link">Demander un devis <i class="fas fa-arrow-right"></i></a></div>
+            </div>
+            <div class="p-card rv" data-cat="instrumentation">
+                <div class="p-card-img"><img src="assets/images/brochure/img_35.jpeg" alt="Phoenix Relays"></div>
+                <div class="p-card-body"><span class="p-card-cat">Instrumentation</span><h3>Modules Relais & Signaux</h3><p>Relais d'interface et conditionneurs de signaux pour armoires de controle.</p><a href="#contact" class="p-card-link">Demander un devis <i class="fas fa-arrow-right"></i></a></div>
+            </div>
+            <div class="p-card rv" data-cat="instrumentation">
+                <div class="p-card-img"><img src="assets/images/brochure/img_36.jpeg" alt="Murr Elektronik"></div>
+                <div class="p-card-body"><span class="p-card-cat">Instrumentation</span><h3>Modules E/S Murr Elektronik</h3><p>Boitiers de repartition terrain et modules E/S decentralises IP67.</p><a href="#contact" class="p-card-link">Demander un devis <i class="fas fa-arrow-right"></i></a></div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- PARTENAIRES -->
+<section class="section section-darker" id="partners">
+    <div class="container">
+        <div class="s-header centered rv">
+            <div class="s-tag">Nos Marques</div>
+            <h2>+25 <span class="accent">partenaires</span> mondiaux</h2>
+            <p>Nous distribuons les plus grandes marques internationales de l'automatisation industrielle</p>
+        </div>
+    </div>
+    <div class="partners-track">
+        <div class="partners-slide">
+            <!-- Set 1 -->
+            <img src="assets/images/brochure/img_38.jpeg" alt="Bonesi">
+            <img src="assets/images/brochure/img_14.jpeg" alt="Pilz">
+            <img src="assets/images/brochure/img_02.jpeg" alt="OMRON">
+            <img src="assets/images/brochure/img_03.jpeg" alt="SICK">
+            <img src="assets/images/brochure/img_50.png" alt="Festo">
+            <img src="assets/images/brochure/img_17.jpeg" alt="Siemens">
+            <!-- Set 2 -->
+            <img src="assets/images/brochure/img_38.jpeg" alt="Bonesi">
+            <img src="assets/images/brochure/img_14.jpeg" alt="Pilz">
+            <img src="assets/images/brochure/img_02.jpeg" alt="OMRON">
+            <img src="assets/images/brochure/img_03.jpeg" alt="SICK">
+            <img src="assets/images/brochure/img_50.png" alt="Festo">
+            <img src="assets/images/brochure/img_17.jpeg" alt="Siemens">
+            <!-- Set 3 -->
+            <img src="assets/images/brochure/img_38.jpeg" alt="Bonesi">
+            <img src="assets/images/brochure/img_14.jpeg" alt="Pilz">
+            <img src="assets/images/brochure/img_02.jpeg" alt="OMRON">
+            <img src="assets/images/brochure/img_03.jpeg" alt="SICK">
+            <img src="assets/images/brochure/img_50.png" alt="Festo">
+            <img src="assets/images/brochure/img_17.jpeg" alt="Siemens">
+            <!-- Set 4 -->
+            <img src="assets/images/brochure/img_38.jpeg" alt="Bonesi">
+            <img src="assets/images/brochure/img_14.jpeg" alt="Pilz">
+            <img src="assets/images/brochure/img_02.jpeg" alt="OMRON">
+            <img src="assets/images/brochure/img_03.jpeg" alt="SICK">
+            <img src="assets/images/brochure/img_50.png" alt="Festo">
+            <img src="assets/images/brochure/img_17.jpeg" alt="Siemens">
+è        </div>
+    </div>
+</section>
+
+<!-- CONTACT -->
+<section class="section section-white" id="contact">
+    <div class="container">
+        <div class="s-header centered rv">
+            <div class="s-tag">Parlons de votre projet</div>
+            <h2>Contactez-<span class="accent">nous</span></h2>
+            <p>Notre equipe est a votre disposition pour vous accompagner dans vos projets industriels</p>
+        </div>
+        <div class="contact-grid">
+            <div class="contact-info-card rv-left">
+                <h3>ISP <span class="accent">Automation</span></h3>
+                <p>N'hesitez pas a nous contacter pour toute demande de devis, information technique ou conseil sur nos gammes de produits.</p>
+                <div class="c-info-item">
+                    <div class="ci-icon"><i class="fas fa-map-marker-alt"></i></div>
+                    <div><h4>Adresse</h4><p>Zone industrielle Ben Arous, Tunis, Tunisie</p></div>
+                </div>
+                <div class="c-info-item">
+                    <div class="ci-icon"><i class="fas fa-phone-alt"></i></div>
+                    <div><h4>Telephone</h4><p>+216 20 350 544</p></div>
+                </div>
+                <div class="c-info-item">
+                    <div class="ci-icon"><i class="fas fa-fax"></i></div>
+                    <div><h4>Fax</h4><p>+216 71 360 050</p></div>
+                </div>
+                <div class="c-info-item">
+                    <div class="ci-icon"><i class="fas fa-envelope"></i></div>
+                    <div><h4>Email</h4><p>ispautomation@yahoo.fr</p></div>
+                </div>
+            </div>
+            <div class="contact-form-wrap rv-right">
+                <form class="contact-form" onsubmit="sendForm(event)">
+                    <div class="cf-row">
+                        <div class="cf-field"><input type="text" placeholder="Votre nom *" required></div>
+                        <div class="cf-field"><input type="text" placeholder="Votre societe"></div>
+                    </div>
+                    <div class="cf-row">
+                        <div class="cf-field"><input type="email" placeholder="Votre email *" required></div>
+                        <div class="cf-field"><input type="tel" placeholder="Votre telephone"></div>
+                    </div>
+                    <div class="cf-field"><input type="text" placeholder="Sujet"></div>
+                    <div class="cf-field"><textarea placeholder="Votre message... *" required></textarea></div>
+                    <button type="submit" class="btn-send" id="btnSend">Envoyer le message <i class="fas fa-paper-plane"></i></button>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+    <div class="footer-inner">
+        <div class="footer-brand-col">
+            <div class="footer-logo-row">
+                <div class="footer-logo-badge">
+                    <img src="assets/images/logo-new.png" alt="ISP Automation">
+                </div>
+                <div class="footer-brand-name">ISP<span>.</span>Automation</div>
+            </div>
+            <p class="footer-brand-desc">Votre partenaire de confiance en automatisation industrielle depuis 2014. Solutions innovantes pour les industries de la Tunisie et de l'Afrique du Nord.</p>
+            <div class="footer-socials">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-whatsapp"></i></a>
+            </div>
+        </div>
+        <div class="footer-col">
+            <h4>Navigation</h4>
+            <a href="#about">A Propos</a>
+            <a href="#divisions">Divisions</a>
+            <a href="#products">Produits</a>
+            <a href="#partners">Partenaires</a>
+            <a href="#contact">Contact</a>
+        </div>
+        <div class="footer-col">
+            <h4>Expertises</h4>
+            <a href="#divisions">Pneumatique</a>
+            <a href="#divisions">Hydraulique</a>
+            <a href="#divisions">Automatisme</a>
+            <a href="#divisions">Instrumentation</a>
+            <a href="#divisions">Securite</a>
+        </div>
+        <div class="footer-col">
+            <h4>Contact</h4>
+            <a href="#">+216 20 350 544</a>
+            <a href="#">ispautomation@yahoo.fr</a>
+            <a href="#">Zone industrielle Ben Arous</a>
+            <a href="#">Tunis, Tunisie</a>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <div class="footer-copy">&copy; 2024 ISP Automation - Tous droits reserves | Concu avec <span>&hearts;</span> en Tunisie</div>
+    </div>
+</footer>
+
+<!-- BACK TO TOP -->
+<button class="back-top" id="backTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">
+    <i class="fas fa-arrow-up"></i>
+</button>
+
+<!-- THREE.JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="assets/js/main.js"></script>
+</body>
+</html>
