@@ -591,3 +591,25 @@
                 border: none;
             }
         }
+
+        /* ===== RESPONSIVE ===== */
+        @media screen and (max-width: 850px) {
+            body { padding: 20px 10px; }
+            .brochure-page {
+                width: 100%;
+                height: auto;
+                min-height: auto;
+                padding: 30px 20px;
+            }
+            .cover-title { font-size: 38px; }
+            .cover-desc { font-size: 14px; }
+            .cover-metrics { flex-direction: column; gap: 20px; }
+            .cover-contact-info { align-items: flex-start; margin-top: 30px; }
+            .cover-footer { flex-direction: column; align-items: flex-start; gap: 30px; }
+            .div-content { grid-template-columns: 1fr; gap: 16px; }
+            .div-brands { border-left: none; padding-left: 0; padding-top: 12px; border-top: 1px solid var(--gray-200); }
+            .footer-contacts { grid-template-columns: 1fr; }
+            .inner-footer { flex-direction: column; align-items: flex-start; gap: 20px; padding: 20px; }
+            .header-logo-container { flex-direction: column; align-items: flex-start; }
+            .header-title { margin-top: 10px; }
+        }
