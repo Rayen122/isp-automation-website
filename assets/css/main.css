@@ -186,7 +186,7 @@
             position:relative; z-index:5; max-width:1400px; margin:0 auto;
             padding:160px 60px 100px; width:100%;
         }
-        .hero-content { max-width:620px; }
+        .hero-content { max-width:850px; }
         .hero-badge {
             display:inline-flex; align-items:center; gap:10px;
             background:rgba(200,16,46,.08); border:1px solid rgba(200,16,46,.15);
@@ -202,9 +202,9 @@
         .hero-badge span { font-size:12px; font-weight:600; color:var(--crimson-light); letter-spacing:2px; text-transform:uppercase; }
 
         .hero h1 {
-            font-family:'Syne',sans-serif; font-size:clamp(32px,3.5vw,52px);
-            color:var(--white); line-height:1.15; font-weight:800; margin-bottom:28px;
-            letter-spacing:-0.5px; text-shadow:0 2px 20px rgba(0,0,0,.5);
+            font-family:'Syne',sans-serif; font-size:clamp(36px,4vw,58px);
+            color:var(--white); line-height:1.1; font-weight:800; margin-bottom:28px;
+            letter-spacing:-1px; text-shadow:0 2px 20px rgba(0,0,0,.5);
             animation:fadeUp .8s var(--transition) .5s both;
         }
         .hero h1 .accent {
@@ -722,7 +722,7 @@
             .prod-grid { grid-template-columns:1fr; }
             .stats-grid { grid-template-columns:1fr 1fr; }
             .cf-row { grid-template-columns:1fr; }
-            .hero h1 { font-size:clamp(26px, 6.5vw, 36px); }
+            .hero h1 { font-size:clamp(24px, 5.5vw, 34px); }
             .hero-desc { font-size:15px; }
             .hero-metrics { flex-direction:column; gap:20px; }
             .hero-video { opacity:.15; width:100%; left:0; mask-image:none; -webkit-mask-image:none; }
