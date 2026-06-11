@@ -157,7 +157,7 @@
 
         /* ===== HERO ===== */
         .hero {
-            position:relative; min-height:100vh; background:var(--dark);
+            position:relative; min-height:75vh; background:var(--dark);
             display:flex; align-items:center; overflow:hidden;
         }
         .hero-video {
