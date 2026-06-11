@@ -5,6 +5,10 @@ window.addEventListener('load',()=>{
 
 /* === CUSTOM CURSOR === */
 (function(){
+    // Sur mobile / écrans tactiles, le curseur est masqué en CSS.
+    // On évite donc complètement la boucle d'animation (économie CPU/batterie, moins de lag).
+    const isTouch = window.matchMedia('(hover: none), (pointer: coarse)').matches || window.innerWidth < 1024;
+    if(isTouch) return;
     const dot=document.querySelector('.cursor-dot');
     const ring=document.querySelector('.cursor-ring');
     if(!dot||!ring) return;
@@ -23,12 +27,25 @@ window.addEventListener('load',()=>{
     });
 })();
 
-/* === SCROLL PROGRESS === */
-window.addEventListener('scroll',()=>{
-    const h=document.documentElement.scrollHeight-window.innerHeight;
-    const p=(window.scrollY/h)*100;
-    document.getElementById('scrollProgress').style.width=p+'%';
-});
+/* === SCROLL HANDLER (regroupé + throttlé via requestAnimationFrame) === */
+(function(){
+    const prog=document.getElementById('scrollProgress');
+    const nav=document.getElementById('topNav');
+    const back=document.getElementById('backTop');
+    let ticking=false;
+    function update(){
+        const y=window.scrollY;
+        const h=document.documentElement.scrollHeight-window.innerHeight;
+        if(prog) prog.style.width=(h>0?(y/h)*100:0)+'%';
+        if(nav) nav.classList.toggle('scrolled',y>60);
+        if(back) back.classList.toggle('show',y>600);
+        ticking=false;
+    }
+    window.addEventListener('scroll',()=>{
+        if(!ticking){ requestAnimationFrame(update); ticking=true; }
+    },{passive:true});
+    update();
+})();
 
 /* === THREE.JS HERO === */
 (function(){
@@ -114,10 +131,6 @@ window.addEventListener('scroll',()=>{
 })();
 
 /* === NAV === */
-window.addEventListener('scroll',()=>{
-    document.getElementById('topNav').classList.toggle('scrolled',scrollY>60);
-    document.getElementById('backTop').classList.toggle('show',scrollY>600);
-});
 function toggleM(){
     document.getElementById('navMenu').classList.toggle('open');
     document.getElementById('burger').classList.toggle('active');

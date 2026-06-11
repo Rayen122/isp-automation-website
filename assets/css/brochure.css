@@ -594,14 +594,18 @@
 
         /* ===== RESPONSIVE ===== */
         @media screen and (max-width: 850px) {
-            body { padding: 20px 10px; }
+            body { padding: 20px 10px; overflow-x: hidden; }
+            /* Sans largeur explicite, le conteneur flex se dimensionne sur son contenu
+               et depasse l'ecran -> on le force a la largeur disponible */
+            .brochure-container { width: 100%; max-width: 100%; }
             .brochure-page {
                 width: 100%;
+                max-width: 100%;
                 height: auto;
                 min-height: auto;
                 padding: 30px 20px;
             }
-            .cover-title { font-size: 38px; }
+            .cover-title { font-size: clamp(30px, 9vw, 42px); overflow-wrap: break-word; }
             .cover-desc { font-size: 14px; }
             .cover-metrics { flex-direction: column; gap: 20px; }
             .cover-contact-info { align-items: flex-start; margin-top: 30px; }

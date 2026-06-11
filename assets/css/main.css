@@ -29,12 +29,14 @@
         }
 
         * { margin:0; padding:0; box-sizing:border-box; }
-        html { scroll-behavior: smooth; }
+        html { scroll-behavior: smooth; overflow-x:hidden; }
         body {
             font-family:'Inter',system-ui,sans-serif; color:var(--gray-800);
-            background:var(--dark); overflow-x:hidden;
+            background:var(--dark); overflow-x:hidden; width:100%;
             -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale;
         }
+        /* Empêche les mots longs (ex: "performance", "industrielle") de déborder sur mobile */
+        h1, h2, h3, h4, p { overflow-wrap:break-word; word-wrap:break-word; }
 
         ::selection { background:var(--crimson); color:var(--white); }
 
@@ -369,6 +371,11 @@
         .about-grid {
             display:grid; grid-template-columns:1fr 1fr; gap:80px; align-items:center;
         }
+        /* min-width:0 evite le "grid blowout" : sans ca un mot long force la colonne
+           a depasser la largeur de l'ecran et le texte est coupe a droite sur mobile */
+        .about-visual, .about-content,
+        .contact-info-card, .contact-form-wrap,
+        .bento-card, .p-card { min-width:0; }
         .about-visual { position:relative; }
         .about-img-wrap {
             position:relative; border-radius:var(--radius-lg); overflow:hidden;
@@ -397,7 +404,7 @@
         .about-exp-badge .ab-text { font-size:10px; font-weight:700; letter-spacing:2px; text-transform:uppercase; margin-top:2px; }
 
         .about-content h3 {
-            font-family:'Syne',sans-serif; font-size:36px; font-weight:800;
+            font-family:'Syne',sans-serif; font-size:clamp(26px,4.5vw,36px); font-weight:800;
             line-height:1.2; margin-bottom:24px;
         }
         .about-content h3 .accent { color:var(--crimson); }
@@ -557,7 +564,7 @@
             border:1px solid var(--gray-200);
         }
         .contact-info-card h3 {
-            font-family:'Syne',sans-serif; font-size:32px; font-weight:800;
+            font-family:'Syne',sans-serif; font-size:clamp(24px,4vw,32px); font-weight:800;
             margin-bottom:8px;
         }
         .contact-info-card h3 .accent { color:var(--crimson); }

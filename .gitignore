@@ -11,3 +11,6 @@ desktop.ini
 
 # Node modules (si utilisé plus tard)
 node_modules/
+
+# Config locale de prévisualisation Claude Code
+.claude/
