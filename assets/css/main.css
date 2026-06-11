@@ -722,8 +722,7 @@
             .hero h1 { font-size:36px; }
             .hero-desc { font-size:15px; }
             .hero-metrics { flex-direction:column; gap:20px; }
-            /* Vidéo hero : masquée sur mobile pour éviter de télécharger un fichier lourd */
-            .hero-video { display:none; }
+            .hero-video { opacity:.25; }
             .footer-inner { grid-template-columns:1fr; gap:32px; }
             /* Empêche le logo + nom de brand de déborder de leur colonne */
             .footer-brand-col { min-width:0; }
