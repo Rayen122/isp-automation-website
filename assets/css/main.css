@@ -545,7 +545,9 @@
             display:flex; gap:80px; align-items:center;
             animation:slide 40s linear infinite; width:max-content;
         }
-        .partners-slide:hover { animation-play-state:paused; }
+        @media(hover: hover) {
+            .partners-slide:hover { animation-play-state:paused; }
+        }
         .partners-slide img {
             height:60px;
             background: var(--white);
@@ -695,66 +697,58 @@
         .back-top:hover { transform:translateY(-4px) scale(1.1); }
 
         /* ===== TOUCH / MOBILE ANIMATIONS ===== */
-        @media(hover: none) {
-            /* Boutons */
-            .btn-primary:active {
-                transform:translateY(-3px); box-shadow:0 16px 40px var(--crimson-glow);
-            }
-            .btn-primary:active::before { left:100%; }
-            .btn-outline:active {
-                border-color:var(--crimson); color:var(--crimson-light); background:rgba(200,16,46,.05);
-            }
-            .btn-send:active {
-                transform:translateY(-3px); box-shadow:0 12px 30px var(--crimson-glow);
-            }
-            .nav-cta:active {
-                transform:scale(1.05); box-shadow:0 8px 30px var(--crimson-glow);
-            }
-            /* Cartes produits */
-            .p-card:active {
-                transform:translateY(-8px); border-color:rgba(200,16,46,.2);
-                box-shadow:0 24px 48px rgba(0,0,0,.08), 0 0 0 1px rgba(200,16,46,.1);
-            }
-            /* Cartes divisions */
-            .bento-card:active { border-color:rgba(200,16,46,.15); transform:translateY(-6px); }
-            .bento-card:active::before { opacity:1; }
-            .bento-card:active .bento-icon {
-                background:var(--crimson); border-color:var(--crimson);
-                box-shadow:0 8px 24px var(--crimson-glow);
-            }
-            .bento-card:active .bento-icon i { color:var(--white); }
-            .bento-card:active .bento-card-line { transform:scaleX(1); }
-            /* Features about */
-            .about-feat:active {
-                background:var(--crimson); border-color:var(--crimson);
-                transform:translateX(6px);
-            }
-            .about-feat:active span,
-            .about-feat:active i { color:var(--white); }
-            /* Contact info items */
-            .c-info-item:active {
-                background:var(--crimson); border-color:var(--crimson);
-                transform:translateX(8px); box-shadow:0 8px 24px var(--crimson-glow);
-            }
-            .c-info-item:active * { color:var(--white) !important; }
-            .c-info-item:active .ci-icon { background:rgba(255,255,255,.15); }
-            /* Filtres produits */
-            .prod-filter:active {
-                background:var(--crimson); color:var(--white); border-color:var(--crimson);
-                box-shadow:0 4px 16px var(--crimson-glow);
-            }
-            /* Liens produits */
-            .p-card-link:active { gap:14px; }
-            /* Footer socials */
-            .footer-socials a:active {
-                background:var(--crimson); border-color:var(--crimson); color:var(--white);
-                transform:translateY(-3px); box-shadow:0 8px 20px var(--crimson-glow);
-            }
-            /* Back to top */
-            .back-top:active { transform:translateY(-4px) scale(1.1); }
-            /* Partenaires */
-            .partners-slide img:active { opacity:.9; transform:scale(1.15); }
+        /* Boutons */
+        .btn-primary.touched {
+            transform:translateY(-3px); box-shadow:0 16px 40px var(--crimson-glow);
         }
+        .btn-outline.touched {
+            border-color:var(--crimson); color:var(--crimson-light); background:rgba(200,16,46,.05);
+        }
+        .btn-send.touched {
+            transform:translateY(-3px); box-shadow:0 12px 30px var(--crimson-glow);
+        }
+        /* Cartes produits */
+        .p-card.touched {
+            transform:translateY(-8px); border-color:rgba(200,16,46,.2);
+            box-shadow:0 24px 48px rgba(0,0,0,.08), 0 0 0 1px rgba(200,16,46,.1);
+        }
+        /* Cartes divisions */
+        .bento-card.touched { border-color:rgba(200,16,46,.15); transform:translateY(-6px); }
+        .bento-card.touched::before { opacity:1; }
+        .bento-card.touched .bento-icon {
+            background:var(--crimson); border-color:var(--crimson);
+            box-shadow:0 8px 24px var(--crimson-glow);
+        }
+        .bento-card.touched .bento-icon i { color:var(--white); }
+        .bento-card.touched .bento-card-line { transform:scaleX(1); }
+        /* Features about */
+        .about-feat.touched {
+            background:var(--crimson); border-color:var(--crimson);
+            transform:translateX(6px);
+        }
+        .about-feat.touched span,
+        .about-feat.touched i { color:var(--white); }
+        /* Contact info items */
+        .c-info-item.touched {
+            background:var(--crimson); border-color:var(--crimson);
+            transform:translateX(8px); box-shadow:0 8px 24px var(--crimson-glow);
+        }
+        .c-info-item.touched * { color:var(--white) !important; }
+        .c-info-item.touched .ci-icon { background:rgba(255,255,255,.15); }
+        /* Filtres produits */
+        .prod-filter.touched {
+            background:var(--crimson); color:var(--white); border-color:var(--crimson);
+            box-shadow:0 4px 16px var(--crimson-glow);
+        }
+        /* Liens produits */
+        .p-card-link.touched { gap:14px; }
+        /* Footer socials */
+        .footer-socials a.touched {
+            background:var(--crimson); border-color:var(--crimson); color:var(--white);
+            transform:translateY(-3px); box-shadow:0 8px 20px var(--crimson-glow);
+        }
+        /* Back to top */
+        .back-top.touched { transform:translateY(-4px) scale(1.1); }
 
         /* ===== RESPONSIVE ===== */
         @media(max-width:1024px) {

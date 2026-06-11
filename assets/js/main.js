@@ -205,6 +205,20 @@ document.querySelectorAll('a[href^="#"]').forEach(a=>{
     });
 });
 
+/* === TOUCH ANIMATIONS (mobile) === */
+(function(){
+    if(!('ontouchstart' in window)) return;
+    var els=document.querySelectorAll('.btn-primary,.btn-outline,.btn-send,.p-card,.bento-card,.about-feat,.c-info-item,.prod-filter,.p-card-link,.footer-socials a,.back-top');
+    els.forEach(function(el){
+        el.addEventListener('touchstart',function(){
+            el.classList.add('touched');
+        },{passive:true});
+        el.addEventListener('touchend',function(){
+            setTimeout(function(){ el.classList.remove('touched'); },600);
+        },{passive:true});
+    });
+})();
+
 /* === FORM === */
 function sendForm(e){
     e.preventDefault();
