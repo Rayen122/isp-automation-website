@@ -719,7 +719,7 @@
             .prod-grid { grid-template-columns:1fr; }
             .stats-grid { grid-template-columns:1fr 1fr; }
             .cf-row { grid-template-columns:1fr; }
-            .hero h1 { font-size:36px; }
+            .hero h1 { font-size:clamp(26px, 6.5vw, 36px); }
             .hero-desc { font-size:15px; }
             .hero-metrics { flex-direction:column; gap:20px; }
             .hero-video { opacity:.25; }

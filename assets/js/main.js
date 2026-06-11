@@ -1,6 +1,14 @@
 /* === PRELOADER === */
 document.addEventListener('DOMContentLoaded',()=>{
     document.getElementById('preloader').classList.add('done');
+
+    /* Force autoplay vidéo sur mobile (certains navigateurs bloquent même les vidéos muted) */
+    var v=document.querySelector('.hero-video');
+    if(v){
+        v.play().catch(function(){
+            document.addEventListener('touchstart',function h(){v.play();document.removeEventListener('touchstart',h);},{once:true});
+        });
+    }
 });
 
 /* === CUSTOM CURSOR === */
