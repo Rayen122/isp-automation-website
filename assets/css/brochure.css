@@ -595,7 +595,7 @@
         /* ===== RESPONSIVE ===== */
         @media screen and (max-width: 850px) {
             body { padding: 16px 8px; overflow-x: hidden; }
-            .brochure-container { width: 100%; max-width: 100%; gap: 24px; }
+            .brochure-container { width: 100%; max-width: 100%; gap: 16px; }
             .brochure-page {
                 width: 100%;
                 max-width: 100%;
@@ -611,9 +611,10 @@
             .cover-eyebrow { font-size: 11px; letter-spacing: 3px; margin-bottom: 16px; }
             .cover-title { font-size: clamp(24px, 7.5vw, 38px); overflow-wrap: break-word; line-height: 1.1; margin-bottom: 16px; }
             .cover-desc { font-size: 13px; line-height: 1.7; max-width: 100%; padding-left: 14px; }
-            .cover-metrics { flex-direction: row; flex-wrap: wrap; gap: 20px; }
-            .metric-val { font-size: 24px; }
-            .metric-label { font-size: 9px; letter-spacing: 1px; }
+            .cover-metrics { flex-direction: row; gap: 0; justify-content: space-between; width: 100%; }
+            .metric-card { flex: 1; }
+            .metric-val { font-size: 22px; }
+            .metric-label { font-size: 8px; letter-spacing: 1px; }
             .cover-footer { flex-direction: column; align-items: flex-start; gap: 20px; padding-top: 20px; }
             .cover-contact-info { align-items: flex-start; margin-top: 0; }
 

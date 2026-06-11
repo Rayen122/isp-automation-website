@@ -1,6 +1,6 @@
 /* === PRELOADER === */
-window.addEventListener('load',()=>{
-    setTimeout(()=>document.getElementById('preloader').classList.add('done'),200);
+document.addEventListener('DOMContentLoaded',()=>{
+    document.getElementById('preloader').classList.add('done');
 });
 
 /* === CUSTOM CURSOR === */
