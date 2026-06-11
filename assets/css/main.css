@@ -722,7 +722,15 @@
             .hero h1 { font-size:36px; }
             .hero-desc { font-size:15px; }
             .hero-metrics { flex-direction:column; gap:20px; }
+            /* Vidéo hero : masquée sur mobile pour éviter de télécharger un fichier lourd */
+            .hero-video { display:none; }
             .footer-inner { grid-template-columns:1fr; gap:32px; }
+            /* Empêche le logo + nom de brand de déborder de leur colonne */
+            .footer-brand-col { min-width:0; }
+            .footer-logo-row { flex-wrap:wrap; gap:10px; }
+            .footer-logo-badge img { height:52px; }
+            .footer-brand-name { font-size:18px; }
+            .footer-brand-desc { overflow-wrap:break-word; word-break:break-word; }
             .footer-bottom { flex-direction:column; gap:12px; text-align:center; }
             .footer { padding:60px 30px 30px; }
             .marquee-item { font-size:12px; }
@@ -740,6 +748,8 @@
             .about-exp-badge { right:10px; padding:16px 20px; }
             .about-exp-badge .ab-num { font-size:32px; }
             .footer { padding:40px 20px 20px; }
+            .footer-logo-badge img { height:44px; }
+            .footer-brand-name { font-size:16px; }
             .contact-info-card { padding: 24px; }
             .contact-form-wrap { padding: 24px; }
         }

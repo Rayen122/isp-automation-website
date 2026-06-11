@@ -1,6 +1,6 @@
 /* === PRELOADER === */
 window.addEventListener('load',()=>{
-    setTimeout(()=>document.getElementById('preloader').classList.add('done'),600);
+    setTimeout(()=>document.getElementById('preloader').classList.add('done'),200);
 });
 
 /* === CUSTOM CURSOR === */
@@ -47,87 +47,84 @@ window.addEventListener('load',()=>{
     update();
 })();
 
-/* === THREE.JS HERO === */
+/* === THREE.JS HERO (chargé dynamiquement, desktop uniquement) === */
 (function(){
     const c=document.getElementById('heroCanvas');
-    if(!c) return;
+    if(!c || window.innerWidth < 1024) return;
 
-    // Désactiver le rendu WebGL sur mobile pour économiser les performances
-    if(window.innerWidth < 1024) {
-        c.style.display = 'none';
-        return;
-    }
-
-    const r=new THREE.WebGLRenderer({canvas:c,alpha:true,antialias:true});
-    r.setSize(window.innerWidth,window.innerHeight);
-    r.setPixelRatio(Math.min(window.devicePixelRatio,2));
-    const scene=new THREE.Scene();
-    const cam=new THREE.PerspectiveCamera(60,window.innerWidth/window.innerHeight,.1,1000);
-    cam.position.z=40;
-
-    const N=1200, pos=new Float32Array(N*3), col=new Float32Array(N*3);
-    for(let i=0;i<N*3;i+=3){
-        pos[i]=(Math.random()-.5)*120; pos[i+1]=(Math.random()-.5)*120; pos[i+2]=(Math.random()-.5)*60;
-        const t=Math.random();
-        if(t<.4){ col[i]=.78; col[i+1]=.063; col[i+2]=.18; }
-        else{ col[i]=.35; col[i+1]=.35; col[i+2]=.42; }
-    }
-    const pg=new THREE.BufferGeometry();
-    pg.setAttribute('position',new THREE.BufferAttribute(pos,3));
-    pg.setAttribute('color',new THREE.BufferAttribute(col,3));
-    const pm=new THREE.PointsMaterial({size:.12,vertexColors:true,transparent:true,opacity:.5,sizeAttenuation:true});
-    const pts=new THREE.Points(pg,pm);
-    scene.add(pts);
-
-    const geos=[
-        new THREE.TorusKnotGeometry(3,.6,80,12),
-        new THREE.IcosahedronGeometry(4,1),
-        new THREE.OctahedronGeometry(3,0)
-    ];
-    const meshes=[];
-    for(let i=0;i<geos.length;i++){
-        const mat=new THREE.MeshBasicMaterial({
-            color:i===0?0xC8102E:0x4A4A5A,wireframe:true,transparent:true,opacity:.03
-        });
-        const m=new THREE.Mesh(geos[i],mat);
-        m.position.set((i-1)*30,(Math.random()-.5)*15,(Math.random()-.5)*20);
-        m.userData={rx:(Math.random()-.5)*.002,ry:(Math.random()-.5)*.003};
-        meshes.push(m); scene.add(m);
-    }
-
-    let mx=0,my=0;
-    document.addEventListener('mousemove',e=>{
-        mx=(e.clientX/window.innerWidth-.5)*2;
-        my=(e.clientY/window.innerHeight-.5)*2;
-    });
-
-    // Observer pour mettre en pause le rendu WebGL quand la section Hero n'est pas visible
-    let isHeroVisible = true;
-    if ('IntersectionObserver' in window) {
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                isHeroVisible = entry.isIntersecting;
-            });
-        }, { threshold: 0 });
-        observer.observe(document.getElementById('hero'));
-    }
-
-    (function anim(){
-        requestAnimationFrame(anim);
-        if(!isHeroVisible) return; // Évite les calculs et rendus WebGL inutiles
-        pts.rotation.y+=.00015; pts.rotation.x+=.00008;
-        meshes.forEach(m=>{m.rotation.x+=m.userData.rx;m.rotation.y+=m.userData.ry;});
-        cam.position.x+=(mx*3-cam.position.x)*.01;
-        cam.position.y+=(-my*2-cam.position.y)*.01;
-        cam.lookAt(scene.position);
-        r.render(scene,cam);
-    })();
-
-    window.addEventListener('resize',()=>{
-        cam.aspect=window.innerWidth/window.innerHeight;
-        cam.updateProjectionMatrix();
+    function initHero(){
+        const r=new THREE.WebGLRenderer({canvas:c,alpha:true,antialias:true});
         r.setSize(window.innerWidth,window.innerHeight);
-    });
+        r.setPixelRatio(Math.min(window.devicePixelRatio,2));
+        const scene=new THREE.Scene();
+        const cam=new THREE.PerspectiveCamera(60,window.innerWidth/window.innerHeight,.1,1000);
+        cam.position.z=40;
+
+        const N=1200, pos=new Float32Array(N*3), col=new Float32Array(N*3);
+        for(let i=0;i<N*3;i+=3){
+            pos[i]=(Math.random()-.5)*120; pos[i+1]=(Math.random()-.5)*120; pos[i+2]=(Math.random()-.5)*60;
+            const t=Math.random();
+            if(t<.4){ col[i]=.78; col[i+1]=.063; col[i+2]=.18; }
+            else{ col[i]=.35; col[i+1]=.35; col[i+2]=.42; }
+        }
+        const pg=new THREE.BufferGeometry();
+        pg.setAttribute('position',new THREE.BufferAttribute(pos,3));
+        pg.setAttribute('color',new THREE.BufferAttribute(col,3));
+        const pm=new THREE.PointsMaterial({size:.12,vertexColors:true,transparent:true,opacity:.5,sizeAttenuation:true});
+        const pts=new THREE.Points(pg,pm);
+        scene.add(pts);
+
+        const geos=[
+            new THREE.TorusKnotGeometry(3,.6,80,12),
+            new THREE.IcosahedronGeometry(4,1),
+            new THREE.OctahedronGeometry(3,0)
+        ];
+        const meshes=[];
+        for(let i=0;i<geos.length;i++){
+            const mat=new THREE.MeshBasicMaterial({
+                color:i===0?0xC8102E:0x4A4A5A,wireframe:true,transparent:true,opacity:.03
+            });
+            const m=new THREE.Mesh(geos[i],mat);
+            m.position.set((i-1)*30,(Math.random()-.5)*15,(Math.random()-.5)*20);
+            m.userData={rx:(Math.random()-.5)*.002,ry:(Math.random()-.5)*.003};
+            meshes.push(m); scene.add(m);
+        }
+
+        let mx=0,my=0;
+        document.addEventListener('mousemove',e=>{
+            mx=(e.clientX/window.innerWidth-.5)*2;
+            my=(e.clientY/window.innerHeight-.5)*2;
+        });
+
+        let isHeroVisible=true;
+        if('IntersectionObserver' in window){
+            new IntersectionObserver(entries=>{ isHeroVisible=entries[0].isIntersecting; },{threshold:0})
+                .observe(document.getElementById('hero'));
+        }
+
+        (function anim(){
+            requestAnimationFrame(anim);
+            if(!isHeroVisible) return;
+            pts.rotation.y+=.00015; pts.rotation.x+=.00008;
+            meshes.forEach(m=>{m.rotation.x+=m.userData.rx;m.rotation.y+=m.userData.ry;});
+            cam.position.x+=(mx*3-cam.position.x)*.01;
+            cam.position.y+=(-my*2-cam.position.y)*.01;
+            cam.lookAt(scene.position);
+            r.render(scene,cam);
+        })();
+
+        window.addEventListener('resize',()=>{
+            cam.aspect=window.innerWidth/window.innerHeight;
+            cam.updateProjectionMatrix();
+            r.setSize(window.innerWidth,window.innerHeight);
+        });
+    }
+
+    // Injecter Three.js uniquement maintenant qu'on sait qu'on est sur desktop
+    const s=document.createElement('script');
+    s.src='https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js';
+    s.onload=initHero;
+    document.head.appendChild(s);
 })();
 
 /* === NAV === */
