@@ -162,9 +162,9 @@
         }
         .hero-video {
             position:absolute; top:0; bottom:0; right:0; z-index:1;
-            width:55%; height:100%; object-fit:cover; opacity:.4;
-            mask-image:linear-gradient(to right, transparent 0%, black 30%);
-            -webkit-mask-image:linear-gradient(to right, transparent 0%, black 30%);
+            width:45%; height:100%; object-fit:cover; opacity:.5;
+            mask-image:linear-gradient(to right, transparent 0%, black 25%);
+            -webkit-mask-image:linear-gradient(to right, transparent 0%, black 25%);
         }
         .hero-canvas { position:absolute; inset:0; z-index:2; pointer-events:none; }
         .hero-gradient {
@@ -202,8 +202,8 @@
         .hero-badge span { font-size:12px; font-weight:600; color:var(--crimson-light); letter-spacing:2px; text-transform:uppercase; }
 
         .hero h1 {
-            font-family:'Syne',sans-serif; font-size:clamp(36px,4vw,58px);
-            color:var(--white); line-height:1.1; font-weight:800; margin-bottom:28px;
+            font-family:'Syne',sans-serif; font-size:clamp(30px,3.5vw,48px);
+            color:var(--white); line-height:1.1; font-weight:800; margin-bottom:24px;
             letter-spacing:-1px; text-shadow:0 2px 20px rgba(0,0,0,.5);
             animation:fadeUp .8s var(--transition) .5s both;
         }
@@ -213,8 +213,8 @@
             background-clip:text;
         }
         .hero-desc {
-            font-size:17px; color:rgba(255,255,255,.6); line-height:1.8;
-            max-width:560px; margin-bottom:48px; font-weight:400;
+            font-size:15px; color:rgba(255,255,255,.6); line-height:1.7;
+            max-width:500px; margin-bottom:40px; font-weight:400;
             text-shadow:0 1px 10px rgba(0,0,0,.4);
             animation:fadeUp .8s var(--transition) .7s both;
         }
@@ -255,7 +255,7 @@
         }
         .hero-metric {}
         .hero-metric-val {
-            font-family:'Syne',sans-serif; font-size:36px; font-weight:800;
+            font-family:'Syne',sans-serif; font-size:30px; font-weight:800;
             color:var(--white); line-height:1;
         }
         .hero-metric-val span { color:var(--crimson); }
