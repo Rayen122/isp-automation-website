@@ -138,11 +138,15 @@ document.addEventListener('DOMContentLoaded',()=>{
 /* === NAV === */
 function toggleM(){
     document.getElementById('navMenu').classList.toggle('open');
-    document.getElementById('burger').classList.toggle('active');
+    const burger = document.getElementById('burger');
+    burger.classList.toggle('active');
+    burger.setAttribute('aria-expanded', String(burger.classList.contains('active')));
 }
 function closeM(){
     document.getElementById('navMenu').classList.remove('open');
-    document.getElementById('burger').classList.remove('active');
+    const burger = document.getElementById('burger');
+    burger.classList.remove('active');
+    burger.setAttribute('aria-expanded', 'false');
 }
 
 /* === SCROLL REVEAL === */
@@ -222,12 +226,32 @@ document.querySelectorAll('a[href^="#"]').forEach(a=>{
 /* === FORM === */
 function sendForm(e){
     e.preventDefault();
-    const b=document.getElementById('btnSend');
-    b.innerHTML='<i class="fas fa-check"></i> Message envoye !';
-    b.style.background='#16a34a';
+    const nom     = document.getElementById('cf-nom').value.trim();
+    const societe = document.getElementById('cf-societe').value.trim();
+    const email   = document.getElementById('cf-email').value.trim();
+    const tel     = document.getElementById('cf-tel').value.trim();
+    const sujet   = document.getElementById('cf-sujet').value.trim() || 'Demande de contact';
+    const message = document.getElementById('cf-message').value.trim();
+
+    const corps =
+        'Nom : ' + nom + '\n' +
+        (societe ? 'Societe : ' + societe + '\n' : '') +
+        'Email : ' + email + '\n' +
+        (tel ? 'Telephone : ' + tel + '\n' : '') +
+        '\nMessage :\n' + message;
+
+    const mailto = 'mailto:ispautomation@yahoo.fr'
+        + '?subject=' + encodeURIComponent('[ISP Site] ' + sujet)
+        + '&body='    + encodeURIComponent(corps);
+
+    window.location.href = mailto;
+
+    const b = document.getElementById('btnSend');
+    b.innerHTML = '<i class="fas fa-check"></i> Client mail ouvert !';
+    b.style.background = '#16a34a';
     setTimeout(()=>{
-        b.innerHTML='Envoyer le message <i class="fas fa-paper-plane"></i>';
-        b.style.background='';
+        b.innerHTML = 'Envoyer le message <i class="fas fa-paper-plane"></i>';
+        b.style.background = '';
         e.target.reset();
-    },3000);
+    }, 4000);
 }
