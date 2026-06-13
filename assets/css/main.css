@@ -168,7 +168,7 @@
         .hero-gradient {
             position:absolute; inset:0; z-index:3;
             background:
-                linear-gradient(90deg, rgba(8,8,12,.7) 0%, rgba(8,8,12,.4) 50%, transparent 100%);
+                linear-gradient(90deg, rgba(8,8,12,.9) 0%, rgba(8,8,12,.7) 35%, rgba(8,8,12,.2) 65%, transparent 100%);
         }
         .hero-grid {
             position:absolute; inset:0; z-index:2;
@@ -200,7 +200,7 @@
         .hero h1 {
             font-family:'Syne',sans-serif; font-size:clamp(22px,2.5vw,34px);
             color:var(--white); line-height:1.15; font-weight:800; margin-bottom:18px;
-            letter-spacing:-0.5px; text-shadow:0 2px 20px rgba(0,0,0,.5);
+            letter-spacing:-0.5px; text-shadow:0 2px 30px rgba(0,0,0,.8), 0 0 60px rgba(0,0,0,.5);
             animation:fadeUp .8s var(--transition) .5s both;
         }
         .hero h1 .accent {
@@ -209,9 +209,9 @@
             background-clip:text;
         }
         .hero-desc {
-            font-size:13px; color:rgba(255,255,255,.6); line-height:1.7;
+            font-size:13px; color:rgba(255,255,255,.75); line-height:1.7;
             max-width:420px; margin-bottom:30px; font-weight:400;
-            text-shadow:0 1px 10px rgba(0,0,0,.4);
+            text-shadow:0 1px 20px rgba(0,0,0,.7);
             animation:fadeUp .8s var(--transition) .7s both;
         }
         .hero-actions {
