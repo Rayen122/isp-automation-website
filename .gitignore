@@ -14,3 +14,10 @@ node_modules/
 
 # Config locale de prévisualisation Claude Code
 .claude/
+
+# wrangler files
+.wrangler
+.dev.vars*
+!.dev.vars.example
+.env*
+!.env.example
