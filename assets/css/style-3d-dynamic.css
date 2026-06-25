@@ -1,0 +1,381 @@
+/* ISP AUTOMATION - 3D DYNAMIC ENHANCEMENT LAYER
+   Transforms existing v2 design with 3D depth, parallax, and dynamic animations
+   Preserves all content while adding cinematic motion effects */
+
+/* === DEBUG INDICATOR === */
+body::before {
+    content: "🚀 3D EFFECTS LOADED";
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    background: #00d9ff;
+    color: #000;
+    padding: 8px 16px;
+    border-radius: 4px;
+    font-weight: bold;
+    z-index: 9999;
+    font-size: 12px;
+}
+
+/* === 3D TRANSFORM FOUNDATION === */
+/* B2B Industrial - Professional depth (VARIANCE: 7, MOTION: 6) */
+html {
+    perspective: 1200px;
+    transform-style: preserve-3d;
+}
+
+body {
+    transform-style: preserve-3d;
+}
+
+/* === IMMEDIATE 3D EFFECTS === */
+/* Make buttons immediately visible with 3D depth */
+.btn-primary, .btn-outline, .btn-send, .nav-cta {
+    transform: translateZ(15px);
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+.btn-primary:hover, .btn-send:hover, .nav-cta:hover {
+    transform: translateZ(30px) translateY(-8px) scale(1.05);
+    box-shadow: 
+        0 20px 60px rgba(0, 217, 255, 0.4),
+        0 0 0 1px rgba(0, 217, 255, 0.3);
+}
+
+.btn-outline:hover {
+    transform: translateZ(25px) translateY(-6px) scale(1.03);
+    box-shadow: 0 16px 48px rgba(255, 255, 255, 0.1);
+}
+
+/* === ENHANCED HERO 3D DEPTH === */
+.hero {
+    transform-style: preserve-3d;
+    perspective: 2000px;
+}
+
+.hero-video {
+    transform: translateZ(-20px) scale(1.05);
+}
+
+.hero-canvas {
+    transform: translateZ(10px);
+}
+
+.hero-grid {
+    transform: translateZ(5px);
+}
+
+.hero-gradient {
+    transform: translateZ(8px);
+}
+
+.hero-visual {
+    transform: translateZ(20px);
+    animation: floatDeep 15s ease-in-out infinite;
+}
+
+@keyframes floatDeep {
+    0%, 100% {
+        transform: translateZ(20px) translateY(0) rotate(0deg);
+    }
+    50% {
+        transform: translateZ(35px) translateY(-20px) rotate(3deg);
+    }
+}
+
+.hero-orb {
+    animation: orb3D 12s ease-in-out infinite alternate;
+}
+
+@keyframes orb3D {
+    0% {
+        transform: translate3d(0, 0, 0) scale(1);
+        filter: blur(80px) hue-rotate(0deg);
+    }
+    100% {
+        transform: translate3d(50px, -40px, 30px) scale(1.3);
+        filter: blur(100px) hue-rotate(45deg);
+    }
+}
+
+.hero-inner {
+    transform: translateZ(25px);
+}
+
+.hero-content {
+    transform-style: preserve-3d;
+}
+
+.hero h1 {
+    transform: translateZ(35px);
+    text-shadow: 
+        0 0 40px rgba(0, 217, 255, 0.3),
+        0 12px 32px rgba(0, 0, 0, 0.5);
+    animation: titleFloat 8s ease-in-out infinite;
+}
+
+@keyframes titleFloat {
+    0%, 100% {
+        transform: translateZ(35px) translateY(0);
+    }
+    50% {
+        transform: translateZ(45px) translateY(-8px);
+    }
+}
+
+.hero-desc {
+    transform: translateZ(30px);
+}
+
+.hero-actions {
+    transform: translateZ(40px);
+}
+
+.hero-scroll {
+    transform: translateZ(20px);
+    animation: scrollFloat 4s ease-in-out infinite;
+}
+
+@keyframes scrollFloat {
+    0%, 100% {
+        transform: translateZ(20px) translateY(0);
+    }
+    50% {
+        transform: translateZ(30px) translateY(-10px);
+    }
+}
+
+/* === NAV 3D FLOAT === */
+.nav {
+    transform: translateZ(60px);
+    transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+    backdrop-filter: blur(20px);
+}
+
+.nav.scrolled {
+    transform: translateZ(80px) translateY(-2px);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+}
+
+.nav-brand-logo {
+    transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.nav-brand:hover .nav-brand-logo {
+    transform: translateZ(25px) rotate(-8deg) scale(1.1);
+}
+
+/* === IMMEDIATE CARD 3D EFFECTS === */
+.bento-card {
+    transform: translateZ(10px);
+    transform-style: preserve-3d;
+    transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+}
+
+.bento-card:hover {
+    transform: translateZ(40px) rotateX(5deg) rotateY(5deg) scale(1.02);
+    box-shadow: 
+        0 40px 80px rgba(0, 0, 0, 0.4),
+        0 0 60px rgba(0, 217, 255, 0.2);
+}
+
+.bento-icon {
+    transform: translateZ(20px);
+    transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.bento-card:hover .bento-icon {
+    transform: translateZ(50px) scale(1.2) rotate(-8deg);
+}
+
+/* === PRODUCT CARDS 3D === */
+.p-card {
+    transform: translateZ(8px);
+    transform-style: preserve-3d;
+    transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+    box-shadow: 0 12px 36px rgba(0, 0, 0, 0.15);
+}
+
+.p-card:hover {
+    transform: translateZ(35px) rotateX(8deg) rotateY(8deg) scale(1.03);
+    box-shadow: 
+        0 50px 100px rgba(0, 0, 0, 0.3),
+        0 0 80px rgba(0, 217, 255, 0.15);
+}
+
+.p-card-img {
+    transform: translateZ(15px);
+}
+
+.p-card-body {
+    transform: translateZ(25px);
+}
+
+.p-card-link {
+    transform: translateZ(35px);
+}
+
+/* === ABOUT SECTION 3D === */
+.about-grid {
+    transform-style: preserve-3d;
+    perspective: 1500px;
+}
+
+.about-visual {
+    transform: translateZ(25px) rotateY(-3deg);
+    transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.about-visual:hover {
+    transform: translateZ(45px) rotateY(-8deg) scale(1.02);
+}
+
+.about-img-wrap {
+    box-shadow: 
+        0 30px 60px rgba(0, 0, 0, 0.3),
+        0 0 0 1px rgba(255, 255, 255, 0.1);
+}
+
+.about-exp-badge {
+    transform: translateZ(50px);
+    animation: badgeOrbit 10s ease-in-out infinite;
+}
+
+@keyframes badgeOrbit {
+    0%, 100% {
+        transform: translateZ(50px) rotate(0deg);
+    }
+    50% {
+        transform: translateZ(70px) rotate(8deg) scale(1.1);
+    }
+}
+
+.about-content {
+    transform: translateZ(15px);
+}
+
+.about-feat {
+    transform-style: preserve-3d;
+    transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.about-feat:hover {
+    transform: translateZ(25px) translateX(15px) rotateY(8deg);
+}
+
+/* === CONTACT 3D DEPTH === */
+.contact-grid {
+    transform-style: preserve-3d;
+    perspective: 1500px;
+}
+
+.contact-info-card {
+    transform: translateZ(20px) rotateY(-2deg);
+    transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.contact-info-card:hover {
+    transform: translateZ(40px) rotateY(-6deg) scale(1.02);
+}
+
+.contact-form-wrap {
+    transform: translateZ(20px) rotateY(2deg);
+    transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.contact-form-wrap:hover {
+    transform: translateZ(40px) rotateY(6deg);
+}
+
+.c-info-item {
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.c-info-item:hover {
+    transform: translateZ(30px) translateX(18px) rotateY(10deg);
+}
+
+/* === PARALLAX SECTIONS === */
+.section {
+    transform-style: preserve-3d;
+}
+
+/* === PARTNERS MARQUEE 3D === */
+.partners-slide img {
+    transform: translateZ(5px);
+    transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.partners-slide img:hover {
+    transform: translateZ(40px) scale(1.15) rotateY(15deg);
+    box-shadow: 
+        0 25px 50px rgba(0, 0, 0, 0.3),
+        0 0 40px rgba(0, 217, 255, 0.2);
+}
+
+/* === MAGNETIC CURSOR EFFECT === */
+@media (hover: hover) and (pointer: fine) {
+    .magnetic {
+        transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+}
+
+/* === REDUCE MOTION FALLBACK === */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+    
+    html {
+        perspective: none;
+    }
+    
+    .hero-visual,
+    .hero-orb,
+    .about-visual,
+    .bento-card,
+    .p-card,
+    .contact-info-card,
+    .contact-form-wrap {
+        transform: none !important;
+    }
+}
+
+/* === MOBILE OPTIMIZATIONS === */
+@media (max-width: 1024px) {
+    html {
+        perspective: none;
+    }
+    
+    body::before {
+        content: "📱 MOBILE MODE";
+        background: #ff6b00;
+    }
+    
+    .hero-visual,
+    .hero-orb,
+    .about-visual,
+    .bento-card,
+    .p-card,
+    .contact-info-card,
+    .contact-form-wrap,
+    .btn-primary,
+    .btn-outline,
+    .btn-send,
+    .nav-cta {
+        transform: none !important;
+    }
+}
+
+/* === DESKTOP ENHANCED EFFECTS === */
+@media (min-width: 1025px) {
+    body::before {
+        content: "🚀 3D DESKTOP MODE";
+    }
+}

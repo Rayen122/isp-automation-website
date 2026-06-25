@@ -1,0 +1,54 @@
+/* =================================================================
+   ISP AUTOMATION - 3D DYNAMIC REDESIGN
+   B2B Industrial - Visual Overhaul Preserving Content
+   VARIANCE:9 | MOTION:9 | DENSITY:4
+   ================================================================= */
+
+:root {
+    --bg-space: #0a0a12;
+    --bg-deep: #0f0f1a;
+    --bg-layer: #14141f;
+    --cyan: #00d9ff;
+    --cyan-glow: rgba(0, 217, 255, 0.4);
+    --purple: #7c3aed;
+    --purple-glow: rgba(124, 58, 237, 0.3);
+    --white: #ffffff;
+    --text: rgba(255, 255, 255, 0.9);
+    --text-dim: rgba(255, 255, 255, 0.6);
+    --text-muted: rgba(255, 255, 255, 0.3);
+    --glass: rgba(255, 255, 255, 0.05);
+    --glass-border: rgba(255, 255, 255, 0.1);
+    --ease: cubic-bezier(0.16, 1, 0.3, 1);
+    --spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+* {margin: 0; padding: 0; box-sizing: border-box;}
+
+html {
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+}
+
+body {
+    font-family: 'DM Sans', system-ui, -apple-system, sans-serif;
+    background: var(--bg-space);
+    color: var(--text);
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* === GRAIN TEXTURE === */
+.grain {
+    position: fixed;
+    inset: 0;
+    z-index: 9998;
+    pointer-events: none;
+    opacity: 0.03;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence baseFrequency='0.9' numOctaves='4'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+/* === CUSTOM CURSOR === */
+.cursor-dot {
+    width: 8px;
+    height: 8px;
