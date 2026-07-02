@@ -126,7 +126,7 @@
             display:flex; align-items:center; justify-content:center;
             transition:all .3s var(--transition);
         }
-        .nav-brand-logo { height:48px; display:block; transition:height .3s var(--transition); }
+        .nav-brand-logo { height:64px; display:block; transition:height .3s var(--transition); }
         .nav-brand-text { font-family:'Outfit',sans-serif; font-weight:800; font-size:18px; color:var(--white); letter-spacing:1px; }
         .nav-brand-text span { color:var(--crimson); }
         .nav-menu { display:flex; list-style:none; gap:8px; }
@@ -806,7 +806,7 @@
             .btn-primary, .btn-outline { width:100%; text-align:center; justify-content:center; }
             .nav { padding:10px 16px; width:calc(100% - 20px); }
             .nav-brand-text { font-size: 16px; }
-            .nav-brand-logo { height: 38px; }
+            .nav-brand-logo { height: 48px; }
             .about-exp-badge { right:10px; padding:16px 20px; }
             .about-exp-badge .ab-num { font-size:32px; }
             .footer { padding:40px 20px 20px; }
